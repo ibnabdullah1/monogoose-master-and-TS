@@ -8,13 +8,20 @@ export interface Guardian {
   motherOccupation: string
   motherContactNumber: string
 }
+export interface UserName {
+  firstName: string
+  middleName?: string
+  lastName: string
+}
+export interface LocalGuardian {
+  name: string
+  occupation: string
+  contactNumber: string
+  address: string
+}
 export interface Student {
   id: string
-  name: {
-    firstName: string
-    middleName?: string
-    lastName: string
-  }
+  name: UserName
   gender: 'male' | 'female'
   dateOfBirth: string
   email: string
@@ -24,4 +31,7 @@ export interface Student {
   presentAddress: string
   permanentAddress: string
   guardian: Guardian
+  localGuardian: LocalGuardian
+  profileImage?: string
+  isActive?: 'active' | 'blocked'
 }
