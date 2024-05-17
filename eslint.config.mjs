@@ -1,7 +1,7 @@
 import globals from 'globals'
 import pluginJs from '@eslint/js'
 import tseslint from 'typescript-eslint'
-
+import prettier from 'eslint-config-prettier'
 export default [
   {
     ignores: ['/node_modules/', '.dist/'],
@@ -12,11 +12,11 @@ export default [
       },
     },
 
-    extends: [
-      'eslint:recommended',
-      'plugin:@typescript-eslint/recommended',
-      'prettier',
-    ],
+    // extends: [
+    //   'eslint:recommended',
+    //   'plugin:@typescript-eslint/recommended',
+    //   'prettier',
+    // ],
 
     rules: {
       'no-unused-vars': 'error',
@@ -29,4 +29,5 @@ export default [
 
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
+  prettier,
 ]
